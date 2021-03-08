@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="CoffeeXam.Views.CoffeeEquipmentPage"
+    xmlns:viewmodels="clr-namespace:CoffeeXam.ViewModels"
+    BackgroundColor="PapayaWhip"
+    x:DataType="viewmodels:CoffeeEquipmentViewModel">
+    <ContentPage.BindingContext>
+        <viewmodels:CoffeeEquipmentViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Grid RowDefinitions="*,Auto">
+            <Label
+                x:Name="LabelCount"
+                Grid.Row="0"
+                BackgroundColor="#FFEE00"
+                HorizontalOptions="CenterAndExpand"
+                Text="{Binding CountDisplay}"
+                FontSize="Large"
+                VerticalOptions="CenterAndExpand" CharacterSpacing="5" />
+            <Button
+                x:Name="ButtonClick"
+                Command="{Binding IncreaseCount}"
+                Grid.Row="1"
+                Text="Click Me"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
